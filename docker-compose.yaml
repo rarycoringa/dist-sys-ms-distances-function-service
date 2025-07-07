@@ -1,0 +1,12 @@
+services:
+  distancies:
+    build: .
+    container_name: distancies
+    ports:
+      - "9090:9090"
+    networks:
+      - dist-sys-ms-network
+
+networks:
+  dist-sys-ms-network:
+    external: true
