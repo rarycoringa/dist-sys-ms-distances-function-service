@@ -2,6 +2,8 @@ package br.edu.ufrn.distancies.functions;
 
 import java.util.function.Function;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,16 +16,21 @@ import br.edu.ufrn.distancies.records.Geolocation;
 
 @Configuration
 public class DistanciesFunctions {
-
+    private static final Logger logger = LoggerFactory.getLogger(DistanciesFunctions.class);
+    
     @Bean
     public Function<DistanceRequest, DistanceResponse> distance() {
-        return req -> {
+        return request -> {
+            logger.info(
+                "Function distance() called with request " + request.toString()
+            );
+
             double EARTH_RADIUS_KM = 6371.0;
             
             Unit unit = Unit.KILOMETERS;
 
-            Geolocation origin = req.origin();
-            Geolocation destination = req.destination();
+            Geolocation origin = request.origin();
+            Geolocation destination = request.destination();
 
             double dLat = Math.toRadians(destination.lat() - origin.lat());
             double dLon = Math.toRadians(destination.lon() - origin.lon());
@@ -38,20 +45,30 @@ public class DistanciesFunctions {
 
             double distance = 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(x));
 
-            return new DistanceResponse(distance, unit);
+            DistanceResponse response = new DistanceResponse(distance, unit);
+
+                        logger.info(
+                "Function distance() called with request " + request.toString()
+                + " returning response " + response.toString()
+            );
+
+            return response;
         };
     }
 
     @Bean
     public Function<ConversionRequest, ConversionResponse> convert() {
-        return req -> {
+        return request -> {
+            logger.info(
+                "Function convert() called with request " + request.toString()
+            );
+
             double KILOMETERS_TO_MILES = 0.621371;
             double MILES_TO_KILOMETERS = 1.609344;
-
-            Unit from = req.from();
-            Unit to = req.to();
-            double originValue = req.value();
             
+            Unit from = request.from();
+            Unit to = request.to();
+            double originValue = request.value();            
 
             double value;
 
@@ -63,7 +80,14 @@ public class DistanciesFunctions {
                 value = originValue;
             }
 
-            return new ConversionResponse(value);
+            ConversionResponse response = new ConversionResponse(value);
+
+            logger.info(
+                "Function convert() called with request " + request.toString()
+                + " returning response " + response.toString()
+            );
+
+            return response;
         };
     }
 
