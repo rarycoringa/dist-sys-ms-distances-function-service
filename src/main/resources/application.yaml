@@ -1,0 +1,26 @@
+spring:
+    application:
+        name: distancies
+    cloud:
+        config:
+            discovery:
+                enabled: true
+                service-id: config
+    config:
+        import: "optional:configserver:"
+
+server:
+    port: 9090
+
+eureka:
+    client:
+        enabled: true
+        fetch-registry: true
+        register-with-eureka: true
+        service-url:
+            defaultZone:
+                - "http://discovery1:8761/eureka"
+                - "http://discovery2:8762/eureka"
+                - "http://discovery3:8763/eureka"
+    instance:
+        prefer-ip-address: true
