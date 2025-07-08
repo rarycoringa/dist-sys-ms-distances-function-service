@@ -20,3 +20,13 @@ eureka:
             defaultZone: http://discovery1:8761/eureka,http://discovery2:8762/eureka,http://discovery3:8763/eureka
     instance:
         prefer-ip-address: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+    endpoint:
+        health:
+            show-details: always
+            show-components: always
