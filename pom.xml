@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.edu.ufrn</groupId>
-	<artifactId>distancies</artifactId>
+	<artifactId>distances</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>distancies</name>
-	<description>Distancies Function Service</description>
+	<name>distances</name>
+	<description>Distances Function Service</description>
 	<url/>
 	<licenses>
 		<license/>

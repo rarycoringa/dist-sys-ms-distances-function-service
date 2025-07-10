@@ -1,4 +1,4 @@
-package br.edu.ufrn.distancies.enums;
+package br.edu.ufrn.distances.enums;
 
 public enum Unit {
     KILOMETERS,

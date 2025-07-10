@@ -1,15 +1,15 @@
-package br.edu.ufrn.distancies;
+package br.edu.ufrn.distances;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "distancies")
-public class DistanciesProperties {
+@ConfigurationProperties(prefix = "distances")
+public class DistancesProperties {
     private double earthRadiusKilometers;
     private double earthRadiusMiles;
     private double kilometersToMiles;
     private double milesToKilometers;
 
-    public DistanciesProperties() {}
+    public DistancesProperties() {}
 
     public double getEarthRadiusKilometers() {
         return this.earthRadiusKilometers;

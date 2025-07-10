@@ -1,9 +1,9 @@
 services:
-  distancies:
+  distances:
     build: .
-    container_name: distancies
+    container_name: distances
     ports:
-      - "9090:9090"
+      - "8080:8080"
     networks:
       - dist-sys-ms-network
 

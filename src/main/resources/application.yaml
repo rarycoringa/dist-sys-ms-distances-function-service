@@ -1,6 +1,6 @@
 spring:
     application:
-        name: distancies
+        name: distances
     cloud:
         config:
             discovery:

@@ -1,4 +1,4 @@
-package br.edu.ufrn.distancies.functions;
+package br.edu.ufrn.distances.functions;
 
 import java.util.function.Function;
 
@@ -8,21 +8,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import br.edu.ufrn.distancies.DistanciesProperties;
-import br.edu.ufrn.distancies.enums.Unit;
-import br.edu.ufrn.distancies.records.ConversionRequest;
-import br.edu.ufrn.distancies.records.ConversionResponse;
-import br.edu.ufrn.distancies.records.DistanceRequest;
-import br.edu.ufrn.distancies.records.DistanceResponse;
-import br.edu.ufrn.distancies.records.Geolocation;
+import br.edu.ufrn.distances.DistancesProperties;
+import br.edu.ufrn.distances.enums.Unit;
+import br.edu.ufrn.distances.records.ConversionRequest;
+import br.edu.ufrn.distances.records.ConversionResponse;
+import br.edu.ufrn.distances.records.DistanceRequest;
+import br.edu.ufrn.distances.records.DistanceResponse;
+import br.edu.ufrn.distances.records.Geolocation;
 
 @Configuration
-public class DistanciesFunctions {
+public class DistancesFunctions {
     
     @Autowired
-    private DistanciesProperties properties;
+    private DistancesProperties properties;
 
-    private static final Logger logger = LoggerFactory.getLogger(DistanciesFunctions.class);
+    private static final Logger logger = LoggerFactory.getLogger(DistancesFunctions.class);
 
     @Bean
     public Function<DistanceRequest, DistanceResponse> distance() {
