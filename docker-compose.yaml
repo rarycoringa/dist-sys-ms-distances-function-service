@@ -1,9 +1,21 @@
 services:
-  distances:
+  distances1:
     build: .
-    container_name: distances
+    container_name: distances1
+    environment:
+      - SERVER_PORT=8185
     ports:
-      - "8080:8080"
+      - "8185:8185"
+    networks:
+      - dist-sys-ms-network
+
+  distances2:
+    build: .
+    container_name: distances2
+    environment:
+      - SERVER_PORT=8186
+    ports:
+      - "8186:8186"
     networks:
       - dist-sys-ms-network
 
