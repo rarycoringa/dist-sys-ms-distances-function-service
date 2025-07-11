@@ -49,6 +49,11 @@ public class DistancesFunctions {
 
             double earthRadiusKilometers = this.properties.getEarthRadiusKilometers();
 
+            logger.info(
+                "Function distance() called with request " + request.toString()
+                + " using property earthRadiusKilometers=" + String.valueOf(earthRadiusKilometers)
+            );
+
             double distance = 2 * earthRadiusKilometers * Math.asin(Math.sqrt(x));
 
             DistanceResponse response = new DistanceResponse(distance, unit);
@@ -77,7 +82,9 @@ public class DistancesFunctions {
             double milesToKilometers = this.properties.getMilesToKilometers();
 
             logger.info(
-                "Function convert() using properties " + this.properties
+                "Function convert() called with request " + request.toString()
+                + " using property kilometersToMiles=" + String.valueOf(kilometersToMiles)
+                + " and property milesToKilometers=" + String.valueOf(milesToKilometers)
             );
 
             double value;

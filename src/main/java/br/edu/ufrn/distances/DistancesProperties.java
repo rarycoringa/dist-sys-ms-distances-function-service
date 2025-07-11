@@ -1,7 +1,9 @@
 package br.edu.ufrn.distances;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
+@Component
 @ConfigurationProperties(prefix = "distances")
 public class DistancesProperties {
     private double earthRadiusKilometers;
