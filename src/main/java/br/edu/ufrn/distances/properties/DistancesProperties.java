@@ -1,4 +1,4 @@
-package br.edu.ufrn.distances;
+package br.edu.ufrn.distances.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

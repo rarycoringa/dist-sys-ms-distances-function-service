@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import br.edu.ufrn.distances.DistancesProperties;
+import br.edu.ufrn.distances.properties.DistancesProperties;
 import br.edu.ufrn.distances.enums.Unit;
 import br.edu.ufrn.distances.records.ConversionRequest;
 import br.edu.ufrn.distances.records.ConversionResponse;
